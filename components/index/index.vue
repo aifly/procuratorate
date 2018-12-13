@@ -1,6 +1,10 @@
 <template>
 	<div class="zmiti-index-ui lt-full">
-		<div class='zmiti-index-main' ref='page'>
+		<header>
+			<span v-tap='[showImg,"zhuce"]'></span>
+			<img :src="imgs.header" alt="">
+		</header>
+		<div class='zmiti-index-main' :style="{height:viewH - 128+'px'}" ref='page'>
 			<div>
 				<div class='zmiti-index-search zmiti-center'>
 					<img :src="imgs.searchIco" alt="">
@@ -17,7 +21,7 @@
 					<div>
 						<img :src="imgs.videoOnline" alt="">
 					</div>
-					<div>
+					<div v-tap='[showTelPage]'>
 						<img :src="imgs.hotline" alt="">
 					</div>
 				</div>
@@ -31,15 +35,15 @@
 					<div><a href='#/shensu'>行政申诉</a></div>
 				</div>
 				<div class='zmiti-btns zmiti-color1 zmiti-center'>
-					<div>国家赔偿申请</div>
-					<div>司法救助申请</div>
+					<div v-tap='[showImg,"guojiapeichang"]'>国家赔偿申请</div>
+					<div v-tap='[showImg,"sifajiuzhu"]'>司法救助申请</div>
 				</div>
 				<div class='zmiti-btns zmiti-color1 zmiti-center'>
 					<div>公益诉讼举报</div>
 					<div>咨询建议</div>
 				</div>
 				<div class='zmiti-btns zmiti-color1 zmiti-center'>
-					<div>约见检查官</div>
+					<div v-tap='[showImg,"yuejianjianchaguan"]'>约见检察官</div>
 					<div>律师服务</div>
 				</div>
 				<div class='zmiti-btns zmiti-color2 zmiti-center'>
@@ -51,12 +55,12 @@
 					<div><a href='http://m.bjjc.gov.cn/web/html/map/bj/jcdt.html'>检察地图</a></div>
 				</div>
 				<div class='zmiti-btns zmiti-color3 zmiti-center'>
-					<div>职能介绍</div>
+					<div v-tap='[showImg,"zhinengjieshao"]'>职能介绍</div>
 					<div><a href='http://m.bjjc.gov.cn/web/html/jcynsjg.html'>内设机构</a></div>
 				</div>
 				<div class='zmiti-btns zmiti-color3 zmiti-center'>
-					<div>院领导</div>
-					<div>检察官</div>
+					<div><a href='http://m.bjjc.gov.cn/web/html/jcyyld.html?type=0'>院领导</a></div>
+					<div><a href='http://m.bjjc.gov.cn/web/html/jcyyld.html?type=1'>检察官</a></div>
 				</div>
 				<div class='zmiti-btns zmiti-color4 zmiti-center'>
 					<div>文书格式</div>
@@ -64,11 +68,33 @@
 				</div>
 				<div class='zmiti-btns zmiti-color4 zmiti-center'>
 					<div>司法解释</div>
-					<div>重要文件</div>
+					<div><a href='http://m.bjjc.gov.cn/web/html/jcyzywj.html?type=4'>重要文件</a></div>
 				</div>
 			</div>
 		</div>
 		<Toast :msg="toastMsg"></Toast>
+		<div class="zmiti-mask lt-full" v-if='showTel' >
+			<div class='header' @touchend='showTel =false'>
+				
+			</div>
+			<div class="tel" ref='tel'>
+				<div>
+					<a href="tel:12309"><img :src="imgs.tel12309" alt=""></a>
+				</div>
+			</div>
+		</div>
+
+		<div class="zmiti-mask lt-full" v-if='key' >
+			<div class='header' @touchend='key = ""'>
+				
+			</div>
+			<div class="tel" ref="tel1">
+				<div>
+					<img :src="imgs[key]" alt="">
+				</div>
+			</div>
+		</div>
+
 	</div>
 </template>
 
@@ -83,9 +109,13 @@
 			return {
 				imgs,
 				viewW: window.innerWidth,
+				viewH:window.innerHeight,
 				toastMsg: '',
 				mobile: '',
 				code: "",
+				key:'',
+
+				showTel:false,
 				seconds:60,
 				isSend:false,
 				isAgree:false
@@ -95,7 +125,18 @@
 		components: {
 			Toast
 		},
-	
+		watch:{
+			showTel(val){
+				if(!val){
+					this.tel.destroy();
+				}
+			},
+			key(val){
+				if(!val){
+					this.tel1.destroy();
+				}
+			}
+		},
 		methods: {
 			toast(msg, time = 1500) {
 				this.toastMsg = msg;
@@ -103,7 +144,33 @@
 					this.toastMsg = '';
 				}, time);
 			},
-			
+			showImg(key){
+				this.key = key;
+
+				setTimeout(()=>{
+					this.tel1 = new IScroll(this.$refs['tel1'],{
+						preventDefault:false,
+						scrollbars:true
+					});
+						
+					setTimeout(() => {
+						this.tel1.refresh()
+					}, 1000);
+				},100)
+			},
+			showTelPage(){
+				this.showTel = true;
+				setTimeout(()=>{
+					this.tel = new IScroll(this.$refs['tel'],{
+						preventDefault:false,
+						scrollbars:true
+					});
+						
+					setTimeout(() => {
+						this.tel.refresh()
+					}, 1000);
+				},100)
+			}
 	
 		},
 		mounted() {
@@ -111,8 +178,11 @@
 				preventDefault:false,
 				scrollbars:true
 			});
+		
+			
 			setTimeout(() => {
 				this.scroll.refresh()
+				
 			}, 1000);
 		}
 	}

@@ -2,6 +2,7 @@ var imgs = {
 	audio :"./assets/images/audio.png",
 	banner :"./assets/images/banner.png",
 	house :"./assets/images/house.png",
+	header :"./assets/images/header.png",
 	eye :"./assets/images/eye.png",
 	user :"./assets/images/user.png",
 	users :"./assets/images/users.png",
@@ -10,10 +11,16 @@ var imgs = {
 	upload :"./assets/images/upload.png",
 	upload1 :"./assets/images/upload1.png",
 	check :"./assets/images/check.png",
-
+	tel12309:'./assets/images/12309-1.jpg',
 	hotline :"./assets/images/hotline.png",
 	searchIco :"./assets/images/search-ico.png",
 	videoOnline :"./assets/images/video-online.png",
+
+	guojiapeichang:'./assets/images/guojiapeichang-1.jpg',
+	sifajiuzhu:'./assets/images/sifajiuzhu-1.jpg',
+	yuejianjianchaguan:'./assets/images/yuejianjianchaguan-1.jpg',
+	zhinengjieshao:'./assets/images/zhinengjieshao-1.jpg',
+	zhuce:'./assets/images/reg.jpg',
 	
 }
 window.config = {

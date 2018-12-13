@@ -147,7 +147,7 @@
 					</div>
 					<div class='zmiti-upload-input'>
 						<img :src="imgs.upload1" alt="">
-						<input type="file">
+						<input type="file" @change='change'>
 					</div>
 					
 				</div>
@@ -173,7 +173,7 @@
 					</div>
 					<div class='zmiti-upload-input'>
 						<img :src="imgs.upload1" alt="">
-						<input type="file">
+						<input type="file" @change='change'>
 					</div>
 					
 				</div>
@@ -188,7 +188,7 @@
 					</div>
 					<div class='zmiti-upload-input'>
 						<img :src="imgs.upload1" alt="">
-						<input type="file">
+						<input type="file" @change='change'>
 					</div>
 				</div>
 				<div class='zmiti-form-item zmiti-center zmiti-form-upload'>
@@ -202,7 +202,7 @@
 					</div>
 					<div class='zmiti-upload-input'>
 						<img :src="imgs.upload1" alt="">
-						<input type="file">
+						<input type="file" @change='change'>
 					</div>
 				</div>
 				<div class='zmiti-konggao-submit'>
@@ -249,6 +249,9 @@
 					this.toastMsg = '';
 				}, time);
 			},
+			change(){
+				///this.toast('上传成功');
+			}
 			
 	
 		},
