@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=750,user-scalable=no" />
+	<title>北京市人民检察院检察服务中心</title>
+	<style>
+		html,body{
+		    font-size: 100%;
+		    height: 100%;
+		    padding: 0;margin: 0;
+		}
+		
+	</style>
+	<script>
+		window.protocol = location.protocol;
+		window.PointerEvent = undefined;
+		document.addEventListener('touchmove',function(e){e.preventDefault()},{passive:false});
+	</script>
+	<style>
+		
+	</style>
+</head>
+<body>
+	<div id="app">
+		<router-view></router-view>
+	</div>
+	<script>
+ function loadScript(src){ var script = document.createElement('script'); script.src =src+"?t="+new Date().getTime(); document.body.appendChild(script)
+}
+
+	/*
+	*/
+	 loadScript('./assets/js/base.js')
+	loadScript('./assets/js/index.js') 
+	</script>
+	
+	<!-- 
+	<script src='./assets/js/base.js'></script> 
+	<script src='http://localhost:4054/index.js'></script> 
+	-->
+
+
+</body>
+</html>

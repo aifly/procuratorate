@@ -1,0 +1,185 @@
+/*.ant-btn:focus, .ant-btn:hover,.ant-input:focus, .ant-input:hover {
+    background-color: #fff;
+    border-color: #bf1616;
+    box-shadow: 0 0 0 2px rgba(191, 22, 22, 0.1);
+}*/
+.lt-full {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.zmiti-text-overflow {
+  overflow: hidden;
+  white-space: nowrap;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  -webkit-text-overflow: ellipsis;
+}
+
+.zmiti-play {
+  width: .8rem;
+  height: .8rem;
+  border-radius: 50%;
+  position: fixed;
+  z-index: 1000;
+  right: .5rem;
+  top: .5rem;
+}
+
+.zmiti-play.rotate {
+  -webkit-animation: rotate 5s linear infinite;
+  animation: rotate 5s linear infinite;
+}
+
+.symbin-left {
+  float: left !important;
+}
+
+.symbin-right {
+  float: right !important;
+}
+
+@-webkit-keyframes rotate {
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+.zmiti-konggao-ui {
+  background: #04364e;
+  margin-top: 20px;
+}
+
+.zmiti-konggao-ui .zmiti-konggao-main {
+  height: 100vh;
+  position: relative;
+  width: 100%;
+}
+
+.zmiti-konggao-ui .zmiti-konggao-main > div {
+  padding-bottom: 50px;
+}
+
+.zmiti-konggao-ui .zmiti-center {
+  width: 710px;
+  margin: 20px auto;
+}
+
+.zmiti-konggao-ui .zmiti-form-item {
+  background: #fff;
+  min-height: 80px;
+  padding: 0 20px;
+  box-sizing: border-box;
+  display: -webkit-box;
+  -webkit-box-align: center;
+  -webkit-box-pack: center;
+  -webkit-box-orient: horizontal;
+}
+
+.zmiti-konggao-ui .zmiti-form-item > div {
+  position: relative;
+}
+
+.zmiti-konggao-ui .zmiti-form-item > div:nth-of-type(1) {
+  width: 30px;
+}
+
+.zmiti-konggao-ui .zmiti-form-item > div:nth-of-type(1):before {
+  content: '';
+  position: absolute;
+  width: 1px;
+  height: 24px;
+  background: #bbb;
+  right: -24px;
+  top: 10px;
+}
+
+.zmiti-konggao-ui .zmiti-form-item > div:nth-of-type(2) {
+  -webkit-box-flex: 1;
+}
+
+.zmiti-konggao-ui .zmiti-form-item > div:nth-of-type(2) span {
+  position: absolute;
+  top: 10px;
+  font-size: 28px;
+  left: 40px;
+  color: #89a2c6;
+}
+
+.zmiti-konggao-ui .zmiti-form-item > div:nth-of-type(2) select {
+  width: 100%;
+  opacity: 0;
+  height: 50px;
+  font-size: 30px;
+  position: relative;
+  z-index: 100;
+}
+
+.zmiti-konggao-ui .zmiti-form-item > div:nth-of-type(2) input {
+  font-size: 30px;
+  margin-left: 40px;
+  height: 50px;
+  border: none;
+  outline: none;
+}
+
+.zmiti-konggao-ui .zmiti-form-item > div:nth-of-type(2) input::-webkit-input-placeholder {
+  color: #89a2c6;
+}
+
+.zmiti-konggao-ui .zmiti-form-item > div:nth-of-type(3) {
+  width: 40px;
+}
+
+.zmiti-konggao-ui .zmiti-form-item > div:nth-of-type(3):before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-top: 18px solid #0189c3;
+  border-left: 14px solid transparent;
+  border-right: 14px solid transparent;
+  top: -4px;
+}
+
+.zmiti-konggao-ui .zmiti-form-item.zmiti-form-upload {
+  padding-bottom: 240px;
+  position: relative;
+}
+
+.zmiti-konggao-ui .zmiti-form-item.zmiti-form-upload .zmiti-upload-input {
+  position: absolute;
+  z-index: 10;
+  bottom: 30px;
+  left: 30px;
+  overflow: hidden;
+}
+
+.zmiti-konggao-ui .zmiti-form-item.zmiti-form-upload .zmiti-upload-input input {
+  position: absolute;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+.zmiti-konggao-ui .zmiti-konggao-submit {
+  width: 300px;
+  height: 80px;
+  color: #fff;
+  text-align: center;
+  line-height: 80px;
+  margin: 40px auto;
+  background: #0189c3;
+  border-radius: 10px;
+}
+
+.zmiti-konggao-ui .zmiti-konggao-submit img {
+  width: 30px;
+}
