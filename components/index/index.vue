@@ -48,7 +48,7 @@
 				</div>
 				<div class='zmiti-btns zmiti-color2 zmiti-center'>
 					<div><a href="http://weixin.12309.gov.cn/serviceCenter/weChat/lawList">法律文书公开</a></div>
-					<div><a href='http://wx.ajxxgk.jcy.gov.cn/weixin/login.php?l=2&id=%27%27'>案件程序性信查询</a> </div>
+					<div><a href='http://wx.ajxxgk.jcy.gov.cn/weixin/login.php?l=2&id=%27%27'>案件程序性信息查询</a> </div>
 				</div>
 				<div class='zmiti-btns zmiti-color2 zmiti-center'>
 					<div><a href='http://weixin.12309.gov.cn/serviceCenter/weChat/casesList'>重要案件信息公开</a></div>
